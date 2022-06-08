@@ -1,0 +1,165 @@
+*,
+*::before,
+*::after {
+    outline: 0;
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+html,
+body {
+  font-family: -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  scroll-behavior: smooth;
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+
+header {
+  padding: 10px;
+  background-color: #7E33E0;
+  color: #FFF;
+
+  font-size: 1.2rem;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+article {
+  height: 100%;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  place-items: center;
+}
+
+.item {
+  box-shadow: -4px 6px 20px rgba(0, 0, 0, 0.1);
+  max-width: 270px;
+  height: 20rem;
+
+  display: flex;
+  flex-direction: column;
+  padding: 8px 10px;
+}
+
+.item :is(img) {
+  width: 100%;
+  object-fit: contain;
+}
+
+.item-price {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.item-price button {
+  cursor: pointer;
+}
+
+.item-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.item-info :is(span, p){
+  font-size: 1.5rem;
+  line-height: 1.2rem;
+}
+
+.item-info span {
+  font-weight: 700;
+}
+
+.item-info p {
+  font-weight: 300;
+  font-size: 1rem;
+}
+
+
+.cart {
+  position: relative;
+}
+
+.cart-list {
+  position: absolute;
+  display: none;
+  top: 30px;
+  right: 0;
+
+  background-color: white;
+
+  width: 400px;
+  height: 300px;
+
+  border-radius: 20px 0px 20px 20px;
+  box-shadow: 0 0 10px 1px rgb(0 0 0 / 29%);
+
+  padding: 20px;
+
+  overflow-y: scroll;
+}
+
+.cart-list.open {
+  display: block;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+
+  justify-content: space-between;
+
+  width: 100%;
+  color: #000;
+}
+
+.cart-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cart-item img {
+  width: 100px;
+  object-fit: cover;
+}
+
+.button-close {
+  background-color: transparent;
+  border: 1px solid;
+
+  border-radius: 50%;
+
+  position: relative;
+  width: 20px;
+  height: 20px;
+
+  cursor: pointer;
+}
+
+.button-close::before,
+.button-close::after {
+  content: "";
+  position: absolute;
+
+  width: 1px;
+  height: 15px;
+
+  background-color: #000;
+
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.button-close::before {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
